@@ -3,6 +3,7 @@ export ZSH_CONF="$HOME/.config/zsh"
 #POWERLEVEL9K_MODE="nerdfont-complete"
 #ZSH_THEME="powerlevel10k/powerlevel10k"
 
+source "$ZSH_CONF/env.zsh"
 source "$ZSH_CONF/config.zsh"
 source "$ZSH_CONF/alias.zsh"
 source "$ZSH_CONF/starship.zsh"
