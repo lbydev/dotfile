@@ -14,6 +14,7 @@ alias gbl='git show-branch --list'
 alias gst='git status'
 alias rm='rm -i'
 #alias chmod='chmod --preserve-root'
+alias gfo='git fetch origin'
 
 
 # proxy
