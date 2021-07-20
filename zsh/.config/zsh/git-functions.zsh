@@ -1,11 +1,11 @@
-g() {
-  if [ $# -eq 0 ]; then
-    # Commit/push all with file names changed as commit msg
-    gitupdate .
-  else
-    git "${1:-.}"
-  fi
-}
+# g() {
+#   if [ $# -eq 0 ]; then
+#     # Commit/push all with file names changed as commit msg
+#     gitupdate .
+#   else
+#     git "${1:-.}"
+#   fi
+# }
 
 # cd to root dir of git project
 droot() {
