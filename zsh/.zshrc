@@ -33,7 +33,7 @@ fi
 
 
 #------------------------------------------------------------------------
-# these external tools need to be imported in the end 
+# these external tools need to be imported in the end
 #------------------------------------------------------------------------
 
 # # fzf
@@ -45,3 +45,4 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
 # check tools in the end
 source "$ZSH_CONF/tools.zsh"
+eval "$(luajit $ZSH_CONF/z.lua --init zsh)"
