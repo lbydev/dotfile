@@ -46,3 +46,5 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 # check tools in the end
 source "$ZSH_CONF/tools.zsh"
 eval "$(luajit $ZSH_CONF/z.lua --init zsh)"
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
