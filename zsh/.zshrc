@@ -10,11 +10,37 @@ source "$ZSH_CONF/starship.zsh"
 source "$ZSH_CONF/golang.zsh"
 source "$ZSH_CONF/git-functions.zsh"
 
-# install plugins
-# source "$ZSH_CONF/zplug.zsh"
-source "$ZSH_CONF/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Customize to your needs...
+
+# pretty diff(need to install diff-so-fancy)
+# brew install diff-so-fancy ORRRR npm i -g diff-so-fancy
+function dff(){
+    diff -u $@ | diff-so-fancy | less --tabs=4 -RFX
+}
+
+# fix systemd
+# https://github.com/ohmyzsh/ohmyzsh/issues/8751
+function _systemctl_unit_state() {
+  typeset -gA _sys_unit_state
+  _sys_unit_state=( $(__systemctl list-unit-files "$PREFIX*" | awk '{print $1, $2}') )
+}
+
+# for history-substring-search module, this configuration may no longer be needed in the future
+export HISTORY_SUBSTRING_SEARCH_PREFIXED=true
+export HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true
+
+# Common Env
+export EDITOR='vim'
+export VISUAL='vim'
+
+# Use default grep colors
+export GREP_COLOR='01;31'
+export GREP_COLORS='mt=01;31'
 
 #Export Path
 export PATH="/usr/local/bin:$PATH"

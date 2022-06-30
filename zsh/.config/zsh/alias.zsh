@@ -4,6 +4,7 @@ alias d='docker'
 alias dc='docker-compose'
 alias dcup='docker-compose up'
 alias da='docker attach'
+alias lima='limactl'
 
 # git
 alias gd='git dif'
@@ -34,12 +35,25 @@ noproxy () {
 }
 
 
+# Common Aliases
+#
+# Overwrite Aliases
+# see also: https://github.com/sorin-ionescu/prezto/blob/master/modules/utility/init.zsh
+alias l='ls -alh'
+alias lm='ls -alh | "$PAGER"'
+
+# alias bat to cat
+# https://github.com/sharkdp/bat
+if command -v bat &> /dev/null; then
+    alias cat='bat --theme OneHalfDark --style=plain --paging=never'
+fi
+
 
 # others
 alias now='date +%s'
 alias sz="source $HOME/.zshrc"
 alias j='z'
-alias ll='ls -lG'
+# alias ll='ls -lG'
 # alias rg='rg --column --line-number --hidden --sort path --no-heading --color=always --smart-case -- '
 
 # macos only
