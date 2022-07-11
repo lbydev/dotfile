@@ -74,3 +74,10 @@ source "$ZSH_CONF/tools.zsh"
 eval "$(luajit $ZSH_CONF/z.lua --init zsh)"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+DISABLE_AUTO_TITLE="true"
+
+precmd() {
+  # sets the tab title to current dir
+  echo -ne "\e]1;${PWD##*/}\a"
+}
