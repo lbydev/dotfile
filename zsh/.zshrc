@@ -75,8 +75,8 @@ eval "$(luajit $ZSH_CONF/z.lua --init zsh)"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+# Set the iTerm tab title to the current directory, not full path.
 DISABLE_AUTO_TITLE="true"
-
 precmd() {
   # sets the tab title to current dir
   echo -ne "\e]1;${PWD##*/}\a"
