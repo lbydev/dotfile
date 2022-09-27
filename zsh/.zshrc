@@ -86,4 +86,7 @@ precmd() {
   echo -ne "\e]1;${PWD##*/}\a"
 }
 
-
+# export libpq path 
+if [ -d /usr/local/opt/libpq/bin ]; then
+	export PATH="/usr/local/opt/libpq/bin:$PATH"
+fi
