@@ -52,6 +52,13 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then
  eval "$(pyenv init -)"
 fi
+export PATH="/usr/local/opt/node@16/bin:$PATH"
+if [ -d /usr/local/opt/libpq/bin ]; then
+    export PATH="/usr/local/opt/libpq/bin:$PATH"
+fi
+
+
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -85,8 +92,3 @@ precmd() {
   # sets the tab title to current dir
   echo -ne "\e]1;${PWD##*/}\a"
 }
-
-# export libpq path 
-if [ -d /usr/local/opt/libpq/bin ]; then
-	export PATH="/usr/local/opt/libpq/bin:$PATH"
-fi
