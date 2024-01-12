@@ -61,3 +61,5 @@ alias refresh-dns='sudo killall -HUP mDNSResponder'
 
 # wechat 
 alias wechat='nohup /Applications/WeChat.app/Contents/MacOS/WeChat > /dev/null 2>&1 &'
+# lazygit
+alias lg="lazygit"
