@@ -57,8 +57,8 @@ if [ -d /usr/local/opt/libpq/bin ]; then
     export PATH="/usr/local/opt/libpq/bin:$PATH"
 fi
 
-
-
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -82,7 +82,7 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
 # check tools in the end
 source "$ZSH_CONF/tools.zsh"
-eval "$(luajit $ZSH_CONF/z.lua --init zsh)"
+eval "$(luajit $ZSH_CONF/z.lua --init zsh enhanced once echo)"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
@@ -92,3 +92,11 @@ precmd() {
   # sets the tab title to current dir
   echo -ne "\e]1;${PWD##*/}\a"
 }
+
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="/opt/homebrew/opt/mysql@8.4/bin:$PATH"
+
+# Added by Antigravity
+export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
