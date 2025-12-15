@@ -53,7 +53,7 @@ fi
 alias now='date +%s'
 alias sz="source $HOME/.zshrc"
 alias j='z'
-# alias ll='ls -lG'
+alias ll='ls -lG'
 # alias rg='rg --column --line-number --hidden --sort path --no-heading --color=always --smart-case -- '
 
 # macos only
