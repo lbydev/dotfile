@@ -6,16 +6,22 @@ Each component (zsh, stow, etc.) is placed in its own folder and symlinked into 
 Usage:
 
 1. Install Stow
-   macOS: brew install stow
-   Linux: sudo apt install stow
+
+   macOS: `brew install stow`
+
+   Linux: `sudo apt install stow`
 
 2. Clone the repository
-   git clone <your‑repo‑url> ~/dotfiles
-   cd ~/dotfiles
+
+   `git clone <your‑repo‑url> ~/dotfiles`
+
+   `cd ~/dotfiles`
 
 3. Stow the components you need
-   stow zsh
-   stow stow
+
+   `stow zsh`
+
+   `stow stow`
 
 Structure:
 
