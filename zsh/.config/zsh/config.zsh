@@ -11,10 +11,6 @@ for _enabled_path in $_enabled_paths[@]; do
 	PATH="$PATH:${_enabled_path}"
 done
 
-# tab completion ignore case
-# https://superuser.com/questions/1092033/how-can-i-make-zsh-tab-completion-fix-capitalization-errors-for-directories-and
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-
 # History config
 HISTSIZE=10000
 SAVEHIST=10000
@@ -32,4 +28,7 @@ setopt hist_reduce_blanks
 setopt hist_verify
 setopt hist_no_store
 setopt interactivecomments
-zstyle ':completion:*' rehash true
+
+# NOTE: Completion configuration has been moved to .zshrc
+# to be loaded AFTER Zim Framework initialization
+# This fixes the "completion was already initialized" warning

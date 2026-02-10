@@ -1,34 +1,68 @@
-# dotfile
+# dotfiles
 
-This repository stores personal configuration files, managed with GNU Stow.
-Each component (zsh, stow, etc.) is placed in its own folder and symlinked into the home directory.
+Personal configuration files managed with GNU Stow.
 
-Usage:
+## Setup
 
-1. Install Stow
+Install GNU Stow:
 
-   macOS: `brew install stow`
+```bash
+# macOS
+brew install stow
 
-   Linux: `sudo apt install stow`
+# Linux
+sudo apt install stow
+```
 
-2. Clone the repository
+Clone and deploy:
 
-   `git clone <your‑repo‑url> ~/dotfiles`
+```bash
+git clone <repository-url> ~/dotfile
+cd ~/dotfile
+stow zsh
 
-   `cd ~/dotfiles`
+# Restart shell and install Zim modules
+exec zsh
+zimfw install
+exec zsh
+```
 
-3. Stow the components you need
+## Structure
 
-   `stow zsh`
+```
+dotfile/
+├── zsh/
+│   ├── .zshrc
+│   ├── .zimrc
+│   └── .config/zsh/
+├── git/
+└── stow/
+```
 
-   `stow stow`
+## Usage
 
-Structure:
+Edit configuration (changes apply via symlink):
 
-- stow/.stow-global-ignore
-  Contains patterns Stow should ignore when creating symlinks.
+```bash
+vim ~/.zshrc
+exec zsh
 
-- zsh/
-  Contains zsh configuration files (for example .zshrc).
+# Commit if everything works
+cd ~/dotfile
+git add -p
+git commit -m "Update configuration"
+git push
+```
 
-After running Stow, the files inside each component will be symlinked into your home directory.
+Add/remove packages:
+
+```bash
+stow packagename      # Deploy
+stow -D packagename   # Remove
+```
+
+## Notes
+
+- Use `exec zsh` to restart shell, not `source ~/.zshrc`
+- Store secrets in `~/.zshrc.local` (ignored by git, automatically sourced)
+- Stow creates symlinks, edits to `~/.*` files update dotfiles automatically

@@ -10,3 +10,7 @@ README.*
 TODO.*
 RCS
 .*.secrets.*
+.*.local
+*.backup-*
+*.pre-zim
+*.optimized

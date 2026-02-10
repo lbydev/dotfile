@@ -1,2 +1,23 @@
 .DS_Store
 **/*/.DS_Store
+
+# Zsh compiled files
+*.zwc
+*.zwc.old
+
+# Zsh cache
+.zcompdump*
+
+# Temporary files
+*.swp
+*.bak
+*~
+
+# Backup files
+*.pre-zim
+*.optimized
+*.backup-*
+
+# Local configuration (contains secrets, DO NOT COMMIT!)
+.zshrc.local
+*/.zshrc.local

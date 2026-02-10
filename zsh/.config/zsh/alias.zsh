@@ -18,21 +18,23 @@ alias rm='rm -i'
 alias gfo='git fetch origin'
 
 
-# proxy
-# proxy
-proxy () {
-  export https_proxy=http://127.0.0.1:6152
-  export https_proxy=http://127.0.0.1:6152
-  export all_proxy=socks5://127.0.0.1:6153
-  echo "Proxy on"
-}
-# noproxy
-noproxy () {
-  unset http_proxy
-  unset https_proxy
-  unset all_proxy
-  echo "Proxy off"
-}
+# proxy - DEPRECATED: Now using zsh-proxy plugin
+# See: zmodule SukkaW/zsh-proxy in ~/.zimrc
+# Configuration in ~/.zshrc: PROXY_HTTP and PROXY_SOCKS5
+# Usage: proxy / noproxy
+#
+# proxy () {
+#   export https_proxy=http://127.0.0.1:6152
+#   export https_proxy=http://127.0.0.1:6152
+#   export all_proxy=socks5://127.0.0.1:6153
+#   echo "Proxy on"
+# }
+# noproxy () {
+#   unset http_proxy
+#   unset https_proxy
+#   unset all_proxy
+#   echo "Proxy off"
+# }
 
 
 # Common Aliases
