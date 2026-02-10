@@ -1,4 +1,4 @@
-export STARSHIP_CONFIG=$HOME/.config/zsh/config.toml
+export STARSHIP_CONFIG=$HOME/.config/zsh/starship.toml
 # ==================================================================
 # Install starship
 # ==================================================================

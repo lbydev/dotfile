@@ -1,7 +1,8 @@
-
-export PATH="$PATH:/usr/local/go/bin:/usr/local/go11/bin:"
-
-export LC_ALL=en_US.UTF-8
+# Go environment
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
-export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+
+# Add Go binary path if exists
+if [ -d "/usr/local/go/bin" ]; then
+    export PATH="$PATH:/usr/local/go/bin"
+fi
