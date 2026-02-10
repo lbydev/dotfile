@@ -58,6 +58,9 @@ zmodule olets/zsh-autosuggestions-abbreviations-strategy
 # performance: ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 zmodule zsh-users/zsh-autosuggestions
 
+# AI-powered smart suggestions (Ctrl+O to trigger)
+zmodule yetone/smart-suggestion
+
 #
 # Additional utilities
 #

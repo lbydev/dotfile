@@ -86,6 +86,12 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 # Initialize modules
 # ------------------
 
+# Load local configuration BEFORE Zim initialization
+# This ensures environment variables (like API keys) are available to plugins
+if [ -f ~/.zshrc.local ]; then
+    source ~/.zshrc.local
+fi
+
 ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 # Download zimfw plugin manager if missing.
 if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
@@ -262,12 +268,6 @@ precmd() {
 # ==========================================
 # Local Configuration (Machine-specific)
 # ==========================================
-# Load local configuration file if it exists
-# This file should contain machine-specific settings like:
-# - API keys and tokens
-# - Local paths
-# - Private aliases
-# NOTE: .zshrc.local is NOT tracked by git
-if [ -f ~/.zshrc.local ]; then
-    source ~/.zshrc.local
-fi
+# NOTE: .zshrc.local is now loaded BEFORE Zim initialization (see top of file)
+# This ensures environment variables are available to plugins like smart-suggestion
+# The loading has been moved to line ~89 to fix plugin initialization order
